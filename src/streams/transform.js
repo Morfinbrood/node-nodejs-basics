@@ -5,7 +5,6 @@ class ReverseTransform extends Transform {
     }
 
     _transform(chunk, encoding, callback) {
-        // Reverse the text and push it to the next stream
         this.push(chunk.toString().split('').reverse().join(''));
         callback();
     }
