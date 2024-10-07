@@ -1,3 +1,5 @@
+import { env } from 'node:process';
+
 const parseEnv = () => {
     const resArr = [];
 

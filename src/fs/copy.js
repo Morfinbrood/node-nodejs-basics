@@ -1,7 +1,7 @@
 import { cp } from 'node:fs/promises';
 const copy = async () => {
-    const path = 'fs/files/';
-    const destPath = 'fs/files_copy/';
+    const path = 'src/fs/files/';
+    const destPath = 'src/fs/files_copy/';
 
     try {
         await cp(path, destPath, {
