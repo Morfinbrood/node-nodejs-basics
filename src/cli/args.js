@@ -1,13 +1,16 @@
 import { argv } from 'node:process';
 
 const parseArgs = () => {
-    const argMap = new Map();
-    for (let i = 2; i < argv.length; i = i + 2) {
-        argMap.set(argv[i], argv[i + 1])
+    const resArr = [];
+    const args = argv.slice(2);
+
+    for (let i = 0; i < args.length; i += 2) {
+        if (args[i].startsWith('--')) {
+            resArr.push(`${args[i].slice(2)} is ${args[i + 1]}`);
+        }
     }
-    console.log(argMap);
-    // I think this output is more preferable that just a string
-    // if this is problem - pls write me in discord
+
+    console.log(resArr.join(', '));
 };
 
 parseArgs();

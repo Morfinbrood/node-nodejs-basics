@@ -1,9 +1,13 @@
 const parseEnv = () => {
-    for (let property in process.env) {
-        if (property.substring(0, 4) === "RSS_") {
-            console.log(`${property}=${process.env[property]}`)
+    const resArr = [];
+
+    for (let key in env) {
+        if (key.startsWith('RSS_')) {
+            resArr.push(`${key}=${env[key]}`);
         }
     }
+
+    console.log(resArr.join('; '));
 };
 
 parseEnv();
