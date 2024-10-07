@@ -12,7 +12,7 @@ const rename = async () => {
         }
 
         await renameFS(oldPath, newPath);
-        console.log('renamed successfully!');
+        console.log('File renamed!');
     } catch (err) {
         throw new Error("FS operation failed");
     }
